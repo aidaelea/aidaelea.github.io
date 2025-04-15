@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projekti 2</title>
+    <h1>kivoja kuvia</h1>
+    <style>
+        #kuva {
+            max-width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <img id="kuva" src="kesäkuva2.jpg">
+    <button onclick="edellinenKuva()">edellinen kuva</button>
+    <button onclick="seuraavaKuva()">seuraava kuva</button>
+</body>
+<script>
+    var kuvalista = [
+        "kesäkuva1.jpg",
+        "kesäkuva2.jpg",
+        "kesäkuva3.jpg",
+        "kivojakuvia1.jpg"
+        ]
+    var kuvaelementti = document.getElementById("kuva")
+    kuvaelementti.src = "kuvat/" + kuvalista[0]
+
+    var kuvaNumero = 0
+    
+    function edellinenKuva() {
+        kuvaNumero = kuvaNumero - 1
+        kuvaelementti.src = "kuvat/" + kuvalista[kuvaNumero]
+    }
+
+    function seuraavaKuva() {
+        kuvaNumero = kuvaNumero + 1
+        kuvaelementti.src = "kuvat/" + kuvalista[kuvaNumero]
+     
+    }
+</script>
+</html>
